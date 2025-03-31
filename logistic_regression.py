@@ -26,7 +26,7 @@ def find_parameters(series, rates):
     return np.array(data)
 
 
-def linear_regression(type=roc_auc_score):
+def logistic_regression(type=roc_auc_score):
     conclusions = np.load("conclusions.npy")
 
     data_regular = []
@@ -128,7 +128,7 @@ def lr_test(type=roc_auc_score):
     f_average = 0
 
     for i in range(5):
-        current_roc, current_f = linear_regression(type)
+        current_roc, current_f = logistic_regression(type)
         roc_average += current_roc
         f_average += current_f
 
